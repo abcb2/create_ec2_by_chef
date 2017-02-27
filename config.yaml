@@ -1,0 +1,46 @@
+image: ami-1d4d0f7a
+server_connect_attribute: public_ip_address
+region: ap-northeast-1
+ssh_user: ec2-user
+ssh_key: chef-tutorial
+security_group_id: sg-75b6de12
+
+taro:
+  subnet: subnet-7dfe830b
+  servers:
+    - name: chef-workstation-taro
+      create: true
+      private_ip_address: 10.0.2.11
+      flavor: t2.nano
+    - name: chef-server-taro
+      create: true
+      private_ip_address: 10.0.2.21
+      flavor: t2.medium
+    - name: chef-node-taro-1
+      create: true
+      private_ip_address: 10.0.2.31
+      flavor: t2.nano
+    - name: chef-node-taro-2
+      create: false
+      private_ip_address: 10.0.2.32
+      flavor: t2.nano
+
+tom:
+  subnet: subnet-62fe8314
+  servers:
+    - name: chef-workstation-tom
+      create: true
+      private_ip_address: 10.0.3.11
+      flavor: t2.nano
+    - name: chef-server-tom
+      create: true
+      private_ip_address: 10.0.3.21
+      flavor: t2.medium
+    - name: chef-node-tom-1
+      create: true
+      private_ip_address: 10.0.3.31
+      flavor: t2.nano
+    - name: chef-node-tom-2
+      create: false
+      private_ip_address: 10.0.3.32
+      flavor: t2.nano
